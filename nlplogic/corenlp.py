@@ -5,11 +5,13 @@ import wikipedia
 # golden_state_warriors_text = wikipedia.summary("Golden State Warriors")
 # blob = TextBlob(golden_state_warriors_text)
 
+
 def search_wikipedia(name):
     """Search wikipeida"""
 
     print(f"Searching for name: {name}")
-    return wikipedia(name)
+    return wikipedia.search(name)
+
 
 def summarize_wikipidia(name):
     """Summarize wikipedia"""
@@ -17,11 +19,13 @@ def summarize_wikipidia(name):
     print(f"Finding wikipedia summary for name: {name}")
     return wikipedia.summary(name)
 
+
 def get_text_blob(text):
     """Getting text blob object and returns"""
 
     blob = TextBlob(text)
     return blob
+
 
 def get_phrases(name):
     """Find wikipedia name and return back phrases"""
@@ -30,6 +34,3 @@ def get_phrases(name):
     blob = get_text_blob(text)
     phrases = blob.noun_phrases
     return phrases
-
-
-

@@ -5,12 +5,12 @@ install:
 	python -m textblob.download_corpora
 	
 test:
-	python -m pytest -vv test_*.py
+	python -m pytest -vv --cov=wikiphrases --cov=nlplogic test_*.py
 
 format:
-	black *.py
+	black *.py nlplogic/*.py
 
 lint: 
-	pylint --disable=R,C,E1120 *.py
+	pylint --disable=R,C,E1120 *.py nlplogic/*.py
 
 all: install format lint test
